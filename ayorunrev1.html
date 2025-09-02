@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ayorun | Born A Runner</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* 🌐 Global Styles */
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding-top: 80px;
+        /* Untuk memberi ruang bagi navbar fixed-top */
+      }
+
+      /* 🔗 Navbar Link Hover */
+      .nav-link:hover {
+        color: #0d6efd;
+        text-decoration: underline;
+      }
+
+      /* 🎞️ Fade-in Animation */
+      .fade-in {
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* 🧭 Navbar Styling */
+      nav.navbar {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.6s ease;
+      }
+
+      body.loaded nav.navbar {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 🦶 Footer */
+      footer {
+        background-color: #212529;
+      }
+
+      /* 📱 Responsive Typography & Buttons */
+      @media (max-width: 576px) {
+        h1.display-1 {
+          font-size: 2.5rem;
+        }
+
+        .btn-lg {
+          font-size: 1rem;
+          padding: 0.75rem 1.5rem;
+        }
+
+        .custom-nav {
+          display: none !important;
+        }
+      }
+
+      /* 🎯 Custom Carousel Navigation */
+      .custom-nav button {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .custom-nav i {
+        font-size: 1rem;
+      }
+
+      /* 🖼️ Carousel Container */
+      .owl-carousel {
+        position: relative;
+      }
+
+      /* 🎉 Promo Banner Styling */
+      .promo-banner {
+        background-color: #000;
+        color: #fff;
+        padding: 1rem 0;
+      }
+
+      .promo-text-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        white-space: nowrap;
+      }
+      .promo-text-wrapper span {
+        animation: scrollText 10s linear infinite;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 🔝 Sticky Navbar -->
+    <header>
+      <nav
+        class="navbar navbar-expand-md navbar-light bg-light shadow-sm border-bottom fixed-top"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img
+              src="images/logo-ayorun.jpeg"
+              width="70"
+              height="62"
+              alt="logo-ayorun"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#hero">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">MEN</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">WOMEN</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ACCESSORIES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT US</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <button class="btn btn-outline-primary me-2">Login</button>
+              <button class="btn btn-primary">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 🧩 Main Content -->
+    <main>
+      <!-- 🏃 Hero Section -->
+      <section id="hero" class="px-4 py-5 my-5 text-center fade-in">
+        <h1 class="fs-4 text-body-emphasis mb-2">Live The Run</h1>
+        <h1 class="display-1 fw-bold text-body-emphasis">BORN A<br />RUNNER</h1>
+        <div class="overflow-hidden mt-4">
+          <div class="container px-5">
+            <img
+              src="images/Image-Banner.png"
+              class="img-fluid border rounded-3"
+              alt="Banner Ayorun"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 🎉 Promo Banner -->
+      <section class="promo-banner">
+        <div class="container-fluid text-center">
+          <div class="promo-text-wrapper">
+            <span>AUGUST SALE 45% OFF!</span>
+            <span>AUGUST SALE 45% OFF!</span>
+            <span>AUGUST SALE 45% OFF!</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🛍️ Product Section -->
+      <section class="container py-5 my-5">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-12">
+            <div
+              class="section-heading d-flex justify-content-between align-items-center"
+            >
+              <h1 class="mb-0">New Arrival</h1>
+              <div
+                class="custom-nav d-none d-md-flex gap-2 justify-content-end"
+              >
+                <button class="btn btn-primary btn-sm owl-prev-custom">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn btn-primary btn-sm owl-next-custom">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="owl-carousel product-carousel mt-4">
+          <!-- Product Card 1 -->
+          <div class="card h-100 shadow-sm p-3">
+            <img src="images/1.avif" class="card-img-top" alt="Running Shoes" />
+            <div class="card-body text-center">
+              <h5 class="card-title">SpeedRunner X</h5>
+              <p class="card-text text-muted">Rp 1.250.000</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="card h-100 shadow-sm p-3">
+            <img
+              src="images/2.avif"
+              class="card-img-top"
+              alt="Running Jacket"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">WindFlex Jacket</h5>
+              <p class="card-text text-muted">Rp 850.000</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="card h-100 shadow-sm p-3">
+            <img src="images/3.avif" class="card-img-top" alt="Running Cap" />
+            <div class="card-body text-center">
+              <h5 class="card-title">AeroLite Cap</h5>
+              <p class="card-text text-muted">Rp 250.000</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 🧭 Footer -->
+    <footer class="text-white text-center py-4 mt-5">
+      <p class="mb-0">&copy; 2025 Ayorun. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const owl = $(".product-carousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: 3 },
+          },
+        });
+
+        $(".owl-prev-custom").click(function () {
+          owl.trigger("prev.owl.carousel");
+        });
+
+        $(".owl-next-custom").click(function () {
+          owl.trigger("next.owl.carousel");
+        });
+      });
+
+      // Fade-in navbar on load
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
+</html>
