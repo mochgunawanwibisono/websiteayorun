@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +11,8 @@
 
   <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -20,6 +22,7 @@
       font-family: "Segoe UI", sans-serif;
       margin: 0;
       padding-top: 80px;
+      overflow-x: hidden;
     }
 
     .nav-link:hover {
@@ -32,8 +35,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     nav.navbar {
@@ -53,21 +63,6 @@
 
     footer {
       background-color: #212529;
-    }
-
-    @media (max-width: 576px) {
-      h1.display-1 {
-        font-size: 2.5rem;
-      }
-
-      .btn-lg {
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-      }
-
-      .custom-nav {
-        display: none !important;
-      }
     }
 
     .custom-nav button {
@@ -111,11 +106,75 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* 📱 Mobile Optimization */
+    @media (max-width: 576px) {
+      h1.display-1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+      }
+
+      #hero h1.fs-4 {
+        font-size: 1rem;
+      }
+
+      #hero {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .btn-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .navbar .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+      }
+
+      .custom-nav {
+        display: none !important;
+      }
+
+      .promo-text-wrapper {
+        font-size: 1rem;
+        gap: 1rem;
+      }
+
+      .product-carousel .card {
+        padding: 1rem;
+      }
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .card-text {
+        font-size: 0.9rem;
+      }
+    }
+
+    .promo-banner,
+    .promo-text-wrapper {
+      overflow-x: hidden;
+      flex-wrap: wrap;
+    }
+
+    .container.px-5 {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrapper d-flex flex-column min-vh-100">
-    
+
     <!-- 🔝 Sticky Navbar -->
     <header>
       <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm border-bottom fixed-top">
@@ -132,8 +191,8 @@
               <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
               <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
             </ul>
-            <div class="d-flex">
-              <button class="btn btn-outline-secondary me-2">Login</button>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-secondary">Login</button>
               <button class="btn btn-secondary">Sign-up</button>
             </div>
           </div>
@@ -144,7 +203,7 @@
     <!-- 🧩 Main Content -->
     <main class="flex-grow-1">
       <!-- 🏃 Hero Section -->
-      <section id="hero" class="px-4 py-5 mb-1 text-center fade-in">
+      <section id="hero" class="px-4 py-4 mb-2 text-center fade-in">
         <h1 class="fs-4 text-body-emphasis mb-2">Live The Run</h1>
         <h1 class="display-1 fw-bold text-body-emphasis" style="line-height: 0.9;">BORN A<br />RUNNER</h1>
         <div class="overflow-hidden mt-4">
@@ -257,5 +316,5 @@
     });
   </script>
 </body>
-</html>
 
+</html>
