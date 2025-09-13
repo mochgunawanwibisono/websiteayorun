@@ -189,7 +189,7 @@
       border-radius: 0.5rem;
       overflow: hidden;
       position: relative;
-      /* penting untuk anchor posisi anak */
+      display: flex;
     }
 
     .category-content {
@@ -197,20 +197,21 @@
       bottom: 20px;
       left: 20px;
       color: white;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     }
 
-    /* .category-content {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 1rem;
-      border-radius: 0.5rem;
-    } */
-
-
-
+    /* 📱 Responsif di Mobile */
     @media (max-width: 768px) {
       .category-card {
         width: 100%;
         height: auto;
+      }
+
+      .category-content {
+        position: static;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 0.5rem;
       }
     }
   </style>
@@ -322,12 +323,12 @@
       </section>
 
       <!-- 🧍‍♂️🧍‍♀️ Category Section -->
-      <section class="category-section my-4 py-4">
+      <section class="category-section py-4">
         <div class="container">
           <div class="row g-4">
             <!-- Men's Category -->
             <div class="col-md-6 d-flex justify-content-center">
-              <div class="card category-card" style="background-image: url('images/male-runner.jpg');">
+              <div class="card category-card text-white" style="background-image: url('images/male-runner.jpg');">
                 <div class="category-content">
                   <h2 class="fw-bold">Men's Collection</h2>
                   <p>Gear up for speed, strength, and style.</p>
@@ -338,7 +339,7 @@
 
             <!-- Women's Category -->
             <div class="col-md-6 d-flex justify-content-center">
-              <div class="card category-card" style="background-image: url('images/female-runner.jpg');">
+              <div class="card category-card text-white" style="background-image: url('images/female-runner.jpg');">
                 <div class="category-content">
                   <h2 class="fw-bold">Women's Collection</h2>
                   <p>Run with grace, power, and confidence.</p>
@@ -349,6 +350,7 @@
           </div>
         </div>
       </section>
+
 
 
     </main>
