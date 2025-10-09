@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-  <!-- 🧾 Custom Styles -->
+  <!-- 💎 Custom Styles (Final Version) -->
   <style>
     /* 🌐 Global Reset & Layout */
     * {
@@ -36,7 +36,6 @@
       padding-top: 80px;
       /* Space for fixed navbar */
       overflow-x: hidden;
-      /* Prevent horizontal scroll */
     }
 
     html {
@@ -72,7 +71,6 @@
       transform: translateY(-20px);
       transition: opacity 0.6s ease;
       z-index: 1050;
-      /* Bootstrap default untuk fixed-top */
     }
 
     body.loaded nav.navbar {
@@ -113,7 +111,6 @@
       color: #fff;
       padding: 1rem 0;
       overflow-x: hidden;
-      /* Prevent overflow on mobile */
     }
 
     .promo-text-wrapper {
@@ -126,22 +123,162 @@
       letter-spacing: 1px;
       white-space: nowrap;
       flex-wrap: wrap;
-      /* Wrap text on small screens */
     }
 
     .promo-text-wrapper span {
       animation: scrollText 10s linear infinite;
     }
 
+    /* 🧾 Latest Article Section */
+    .latest-articles {
+      background-color: #f9f9f9;
+    }
+
+    .article-card {
+      position: relative;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      background-color: #fff;
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-img {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    .article-card:hover .article-img {
+      transform: scale(1.05);
+    }
+
+    .article-content {
+      padding: 1.25rem;
+    }
+
+    .article-content h5 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #212529;
+      margin-bottom: 0.5rem;
+    }
+
+    .read-more {
+      text-decoration: none;
+      font-weight: 600;
+      color: #0d6efd;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    .read-more:hover {
+      color: #0a58ca;
+      text-decoration: underline;
+    }
+
+    /* 🧥 Steal The Look Section */
+    .steal-look-section {
+      background-color: #fff;
+    }
+
+    .steal-image-wrapper img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .steal-image-wrapper p {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .steal-look-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* 📦 Katalog Produk Style */
+    .product-card {
+      text-align: center;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      margin-bottom: 0.75rem;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+    }
+
+    .product-card h6 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #212529;
+    }
+
+    .product-card p {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .product-card a.btn {
+      font-size: 0.85rem;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+    }
+
+    /* 🧼 Category Cards */
+    .category-card {
+      width: 650px;
+      height: 446px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+    }
+
+    .category-content {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
     /* 📱 Mobile Optimization */
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       h1.display-1 {
         font-size: 2.2rem;
         line-height: 1.1;
-      }
-
-      #hero h1.fs-4 {
-        font-size: 1rem;
       }
 
       #hero {
@@ -168,47 +305,31 @@
         gap: 1rem;
       }
 
-      .product-carousel .card {
-        padding: 1rem;
+      .product-card {
+        padding: 0.75rem;
       }
 
-      .card-title {
+      .product-image {
+        height: 200px;
+      }
+
+      .steal-image-wrapper img {
+        height: auto;
+        max-height: 340px;
+      }
+
+      .article-img {
+        height: 180px;
+      }
+
+      .article-content h5 {
         font-size: 1rem;
       }
 
-      .card-text {
+      .read-more {
         font-size: 0.9rem;
       }
-    }
 
-    /* 🧼 Container Padding Fix for Mobile */
-    .container.px-5 {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-    }
-  </style>
-  <style>
-    .category-card {
-      width: 650px;
-      height: 446px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-    }
-
-    .category-content {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      color: white;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-    }
-
-    /* 📱 Responsif di Mobile */
-    @media (max-width: 768px) {
       .category-card {
         width: 100%;
         height: auto;
@@ -222,64 +343,8 @@
       }
     }
   </style>
-  <style>
-    .steal-look-section h2 {
-      font-size: 1.8rem;
-    }
 
-    .product-item h5 {
-      font-size: 1rem;
-    }
 
-    .product-item p {
-      font-size: 0.9rem;
-    }
-
-    .steal-image-wrapper p {
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .product-item img {
-      border-radius: 0.5rem;
-    }
-
-    .steal-look-section h2 {
-      font-size: 1.8rem;
-    }
-
-    .product-item h6 {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .product-item p {
-      font-size: 0.9rem;
-    }
-
-    .steal-look-section h2 {
-      font-size: 1.8rem;
-    }
-
-    .steal-look-section h6 {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .steal-look-section p {
-      font-size: 0.9rem;
-    }
-
-    .product-image {
-      width: 160px;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 0.5rem;
-      margin: 0 auto 0.75rem;
-      display: block;
-    }
-  </style>
 </head>
 
 <body>
@@ -416,119 +481,123 @@
         </div>
       </section>
 
-      <!-- 🧥 Steal The Look Section -->
+      <!-- 🧥 Steal The Look Section (Enhanced Version) -->
       <section class="steal-look-section py-5">
         <div class="container">
-          <div class="row align-items-center g-4">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold text-uppercase">✨ Steal The Look ✨</h2>
+            <p class="text-muted">Inspired running outfit — stylish, functional, and affordable.</p>
+          </div>
+
+          <div class="row align-items-center g-5">
             <!-- 📸 Left Image -->
-            <div class="col-md-4">
-              <div class="steal-image-wrapper">
-                <img src="images/steal-the-look.jpg" alt="Steal The Look" class="img-fluid rounded-3 w-100" />
-                <p class="mt-3 fw-semibold">Running should look as good as it feels.</p>
+            <div class="col-md-5 text-center">
+              <div class="steal-image-wrapper position-relative">
+                <img src="images/steal-the-look.jpg" alt="Steal The Look" class="img-fluid rounded-4 shadow-lg" />
+                <div class="steal-quote position-absolute bottom-0 start-0 w-100 p-3 text-white fw-semibold"
+                  style="background: rgba(0, 0, 0, 0.5); border-bottom-left-radius: 0.75rem; border-bottom-right-radius: 0.75rem;">
+                  <i class="bi bi-heart-fill text-danger me-2"></i> Running should look as good as it feels.
+                </div>
               </div>
             </div>
 
-            <!-- 🛍️ Right Product List - Horizontal -->
-            <div class="col-md-8">
-              <h2 class="fw-bold mb-4">STEAL THE LOOK!</h2>
-              <div class="row g-3">
+            <!-- 🛍️ Right Product List -->
+            <div class="col-md-7">
+              <div class="row g-4">
                 <!-- 🧥 Product 1 -->
                 <div class="col-12 col-md-4">
-                  <div class="text-center">
-                    <img src="images/jacket.jpg" alt="Running Jacket" class="product-image" />
-                    <h6 class="mb-1">Women Windproof Running Jacket - Black</h6>
-                    <p class="text-muted mb-1">Rp 150.000</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Shop +</a>
+                  <div class="product-card text-center p-3 h-100">
+                    <img src="images/jacket.jpg" alt="Running Jacket" class="product-image mb-2" />
+                    <h6 class="fw-semibold mb-1">Windproof Running Jacket</h6>
+                    <p class="text-muted mb-2">Rp 150.000</p>
+                    <a href="#" class="btn btn-primary btn-sm rounded-pill px-3">Shop +</a>
                   </div>
                 </div>
 
                 <!-- 👕 Product 2 -->
                 <div class="col-12 col-md-4">
-                  <div class="text-center">
-                    <img src="images/shirt.jpg" alt="Running Shirt" class="product-image" />
-                    <h6 class="mb-1">Women Sleeveless Running Shirt - Aqua Blue</h6>
-                    <p class="text-muted mb-1">Rp 99.000</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Shop +</a>
+                  <div class="product-card text-center p-3 h-100">
+                    <img src="images/shirt.jpg" alt="Running Shirt" class="product-image mb-2" />
+                    <h6 class="fw-semibold mb-1">Sleeveless Running Shirt</h6>
+                    <p class="text-muted mb-2">Rp 99.000</p>
+                    <a href="#" class="btn btn-primary btn-sm rounded-pill px-3">Shop +</a>
                   </div>
                 </div>
 
                 <!-- 👖 Product 3 -->
                 <div class="col-12 col-md-4">
-                  <div class="text-center">
-                    <img src="images/pants.jpg" alt="Running Pants" class="product-image" />
-                    <h6 class="mb-1">Women Running Pants - Black</h6>
-                    <p class="text-muted mb-1">Rp 149.000 <del class="text-danger ms-1">Rp 249.000</del></p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Shop +</a>
+                  <div class="product-card text-center p-3 h-100">
+                    <img src="images/pants.jpg" alt="Running Pants" class="product-image mb-2" />
+                    <h6 class="fw-semibold mb-1">Women Running Pants</h6>
+                    <p class="text-muted mb-2">
+                      Rp 149.000 <del class="text-danger ms-1">Rp 249.000</del>
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm rounded-pill px-3">Shop +</a>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
 
-      <!-- Section Lates Article -->
-      <section class="py-5 text-center">
-        <div class="container px-4 py-5" id="featured-3">
-          <h2 class="pb-2 mbb-1">Our Latest Article</h2>
-          <small class="text-muted d-block mt-0">Stories from the ground up, from training tips to runner
-            journeys.</small>
 
+      <!-- 🌟 Latest Articles Section -->
+      <section class="py-5 text-center latest-articles">
+        <div class="container px-4 py-5 fade-in" id="featured-3">
+          <h2 class="pb-2 mb-1 fw-bold text-uppercase">Our Latest Article</h2>
+          <small class="text-muted d-block mb-4">
+            Stories from the ground up — from training tips to runner journeys.
+          </small>
 
-          <!-- Grid 4 kolom horizontal -->
-          <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-4">
-            <!-- Artikel 1 -->
-            <div class="feature col">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <img src="images/blog1.png" alt="blog1">
+          <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <!-- 📰 Artikel 1 -->
+            <div class="col">
+              <div class="article-card">
+                <div class="article-img" style="background-image: url('images/blog1.png');"></div>
+                <div class="article-content">
+                  <h5>5 Marathon Tips for Beginners</h5>
+                  <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
               </div>
-              <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-              <a href="#" class="icon-link">Read more <svg class="bi" aria-hidden="true">
-                  <use xlink:href="#chevron-right"></use>
-                </svg></a>
             </div>
 
-            <!-- Artikel 2 -->
-            <div class="feature col">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <img src="images/blog2.png" alt="blog2">
+            <!-- 📰 Artikel 2 -->
+            <div class="col">
+              <div class="article-card">
+                <div class="article-img" style="background-image: url('images/blog2.png');"></div>
+                <div class="article-content">
+                  <h5>Choosing the Right Running Shoes</h5>
+                  <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
               </div>
-              <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-              <a href="#" class="icon-link">Read More <svg class="bi" aria-hidden="true">
-                  <use xlink:href="#chevron-right"></use>
-                </svg></a>
             </div>
 
-            <!-- Artikel 3 -->
-            <div class="feature col">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <img src="images/blog3.png" alt="blog3">
+            <!-- 📰 Artikel 3 -->
+            <div class="col">
+              <div class="article-card">
+                <div class="article-img" style="background-image: url('images/blog3.png');"></div>
+                <div class="article-content">
+                  <h5>Running Through Every Season</h5>
+                  <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
               </div>
-              <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-              <a href="#" class="icon-link">Read More <svg class="bi" aria-hidden="true">
-                  <use xlink:href="#chevron-right"></use>
-                </svg></a>
             </div>
 
-            <!-- Artikel 4 -->
-            <div class="feature col">
-              <div
-                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <img src="images/blog4.png" alt="blog4">
+            <!-- 📰 Artikel 4 -->
+            <div class="col">
+              <div class="article-card">
+                <div class="article-img" style="background-image: url('images/blog4.png');"></div>
+                <div class="article-content">
+                  <h5>How to Build Endurance Fast</h5>
+                  <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
               </div>
-              <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-              <a href="#" class="icon-link">Read More <svg class="bi" aria-hidden="true">
-                  <use xlink:href="#chevron-right"></use>
-                </svg></a>
             </div>
           </div>
         </div>
       </section>
+
 
 
 
@@ -555,7 +624,7 @@
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
             </ul>
           </div>
-    
+
           <!-- Section 2 -->
           <div class="col-6 col-md-2 mb-3">
             <h5>Section</h5>
@@ -567,7 +636,7 @@
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
             </ul>
           </div>
-    
+
           <!-- Section 3 -->
           <div class="col-6 col-md-2 mb-3">
             <h5>Section</h5>
@@ -579,7 +648,7 @@
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
             </ul>
           </div>
-    
+
           <!-- Newsletter -->
           <div class="col-md-5 offset-md-1 mb-3">
             <form>
@@ -593,26 +662,30 @@
             </form>
           </div>
         </div>
-    
+
         <!-- Bottom Footer -->
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
           <p class="mb-0">© 2025 Company, Inc. All rights reserved.</p>
           <ul class="list-unstyled d-flex">
             <li class="ms-3">
               <a class="link-dark" href="#" aria-label="Instagram">
-                <svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg>
+                <svg class="bi" width="24" height="24">
+                  <use xlink:href="#instagram"></use>
+                </svg>
               </a>
             </li>
             <li class="ms-3">
               <a class="link-dark" href="#" aria-label="Facebook">
-                <svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg>
+                <svg class="bi" width="24" height="24">
+                  <use xlink:href="#facebook"></use>
+                </svg>
               </a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
-    
+
   </div>
 
   <!-- ⚙️ Scripts -->
